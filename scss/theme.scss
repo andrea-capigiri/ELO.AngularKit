@@ -1,0 +1,87 @@
+// Custom Theming for Angular Material
+@use "sass:map";
+@use "@angular/material" as mat;
+
+// Be sure that you only ever include 'mat-core' mixin once!
+// it should not be included for each theme.
+@include mat.core();
+
+$light-primary: mat.define-palette(mat.$indigo-palette, 500);
+$light-accent: mat.define-palette(mat.$indigo-palette, A200, A100, A400);
+$light-warn: mat.define-palette(mat.$red-palette, A200, A100, A400);
+$light-theme: mat.define-light-theme(
+	(
+		color: (
+			primary: $light-primary,
+			accent: $light-accent,
+			warn: $light-warn,
+		),
+		typography: mat.define-typography-config(),
+		density: -1,
+	)
+);
+
+$dark-primary: mat.define-palette(mat.$purple-palette, 500);
+$dark-accent: mat.define-palette(mat.$purple-palette, A200, A100, A400);
+$dark-warn: mat.define-palette(mat.$red-palette, A200, A100, A400);
+$dark-theme: mat.define-dark-theme(
+	(
+		color: (
+			primary: $dark-primary,
+			accent: $dark-accent,
+			warn: $dark-warn,
+		),
+		typography: mat.define-typography-config(),
+		density: -1,
+	)
+);
+
+// LIGHT THEME #############################################################
+body[data-theme="light"] {
+	@include mat.form-field-density(-2);
+	//@include mat.all-component-colors($theme);
+	@include mat.all-component-themes($light-theme);
+	//@include all-legacy-component-themes($theme);
+
+	//color: mat.get-theme-color($theme, foreground, card);
+	//background-color: mat.get-theme-color($theme, background, card);
+	//background-color: #eaecf7;
+	//background-color: mat.get-theme-color($theme, background);
+	//background-color: mat.get-theme-color($theme, background, text);
+
+	*:focus {
+		outline-offset: 2px;
+		//outline: 2px solid mat.get-theme-color($theme, accent);
+	}
+	a {
+		//color: get-theme-color($theme, foreground, text);
+	}
+	.card {
+		//background-color: get-theme-color($theme, background, card);
+	}
+}
+
+// DARK THEME ##############################################################
+body[data-theme="dark"] {
+	@include mat.form-field-density(-2);
+	//@include mat.all-component-colors($theme);
+	@include mat.all-component-themes($dark-theme);
+	//@include all-legacy-component-themes($theme);
+
+	//color: mat.get-theme-color($theme, foreground, card);
+	//background-color: mat.get-theme-color($theme, background, card);
+	//background-color: #eaecf7;
+	//background-color: mat.get-theme-color($theme, background);
+	//background-color: mat.get-theme-color($theme, background, text);
+
+	*:focus {
+		outline-offset: 2px;
+		//outline: 2px solid mat.get-theme-color($theme, accent);
+	}
+	a {
+		//color: get-theme-color($theme, foreground, text);
+	}
+	.card {
+		//background-color: get-theme-color($theme, background, card);
+	}
+}
