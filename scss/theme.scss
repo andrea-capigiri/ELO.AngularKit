@@ -37,15 +37,16 @@ $dark-theme: mat.m2-define-dark-theme(
 );
 
 // LIGHT THEME #############################################################
-body[data-theme="light"] {
-	@include mat.form-field-density(-2);
-	//@include mat.all-component-colors($theme);
-	@include mat.all-component-themes($light-theme);
-	//@include all-legacy-component-themes($theme);
 
+@include mat.form-field-density(-2);
+//@include mat.all-component-colors($theme);
+@include mat.all-component-themes($light-theme);
+//@include all-legacy-component-themes($theme);
+
+body[data-theme="light"] {
 	//color: mat.get-theme-color($theme, foreground, card);
 	//background-color: mat.get-theme-color($theme, background, card);
-	//background-color: #eaecf7;
+	background-color: #eaecf7;
 	//background-color: mat.get-theme-color($theme, background);
 	//background-color: mat.get-theme-color($theme, background, text);
 
@@ -63,14 +64,14 @@ body[data-theme="light"] {
 
 // DARK THEME ##############################################################
 body[data-theme="dark"] {
-	@include mat.form-field-density(-2);
+	//@include mat.form-field-density(-2);
 	//@include mat.all-component-colors($theme);
-	@include mat.all-component-themes($dark-theme);
+	@include mat.all-component-colors($dark-theme);
 	//@include all-legacy-component-themes($theme);
 
 	//color: mat.get-theme-color($theme, foreground, card);
 	//background-color: mat.get-theme-color($theme, background, card);
-	//background-color: #eaecf7;
+	background-color: #252624;
 	//background-color: mat.get-theme-color($theme, background);
 	//background-color: mat.get-theme-color($theme, background, text);
 

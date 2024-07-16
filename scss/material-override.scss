@@ -1,5 +1,11 @@
 // MATERIAL OVERRIDE ################################################
 
+.no-wrapper {
+	.mat-mdc-form-field-subscript-wrapper {
+		display: none !important;
+	}
+}
+
 mat-dialog-container {
 	.dialog-header {
 		margin: 24px;
@@ -26,7 +32,7 @@ mat-snack-bar-container {
 
 	& > * {
 		box-shadow: none !important;
-        min-width: 30%;
+		min-width: 30%;
 	}
 
 	.mat-mdc-snack-bar-label[matsnackbarlabel] {
