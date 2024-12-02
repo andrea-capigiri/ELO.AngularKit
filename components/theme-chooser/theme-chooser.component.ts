@@ -8,12 +8,12 @@ import { MatMenuModule } from '@angular/material/menu';
     selector: 'app-theme-chooser',
     templateUrl: 'theme-chooser.component.html',
     styleUrls: ['theme-chooser.component.scss'],
-    standalone: true,
     imports: [
         CommonModule,
         MatIconModule,
         MatMenuModule,
-        MatButtonModule]
+        MatButtonModule
+    ]
 })
 export class ThemeChooserComponent {
     @Input() public visible = true;
